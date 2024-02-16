@@ -54,5 +54,11 @@ class BLOCKRUN_API UBlockrunHUDWidget : public UUserWidget
 	UTextBlock* U_TimerText;
 
 	UPROPERTY(meta=(BindWidget))
+	UTextBlock* U_TimerValueText;
+
+	UPROPERTY(meta=(BindWidget))
 	UTextBlock* U_ActiveSliceText;
+
+	UPROPERTY(meta=(BindWidget))
+	UTextBlock* U_SliceValueText;
 };
