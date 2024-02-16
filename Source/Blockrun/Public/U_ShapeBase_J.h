@@ -13,5 +13,12 @@ UCLASS()
 class BLOCKRUN_API AU_ShapeBase_J : public AU_ShapeBase
 {
 	GENERATED_BODY()
+
+	public:
+	AU_ShapeBase_J();
+
+	protected:
+	void BeginPlay() override;
+	void SetBlockPositions() override;
 	
 };

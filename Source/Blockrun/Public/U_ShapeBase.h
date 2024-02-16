@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "U_BlockBase.h"
 #include "U_ShapeBase.generated.h"
 
 //Forward declarations
-class AU_BlockBase;
+//class AU_BlockBase;
 
 UCLASS()
 class BLOCKRUN_API AU_ShapeBase : public AActor

@@ -14,4 +14,10 @@ class BLOCKRUN_API AU_ShapeBase_O : public AU_ShapeBase
 {
 	GENERATED_BODY()
 	
+	public:
+	AU_ShapeBase_O();
+
+	protected:
+	void BeginPlay() override;
+	void SetBlockPositions() override;
 };

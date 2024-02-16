@@ -2,13 +2,13 @@
 
 
 #include "U_ShapeBase_I.h"
-#include "U_BlockBase.h"
 
 //NOTE: Blockbase is not inherited into ShapeBase because we forward declared Blockbase earlier; Inheritance does not take into account forward declared classes.
 
 AU_ShapeBase_I::AU_ShapeBase_I()
 {
     //Specific shape of the I-Tetronimo, as presented in the Wiki, that is why we have to hard code the positions
+    //This is the only shape that does not fit inside the 3x3 grid, that is why this code is there
     U_BlockPositions.Empty();
 
     U_BlockPositions.Add(FVector(0,0,0));
@@ -24,8 +24,8 @@ AU_ShapeBase_I::AU_ShapeBase_I()
 void AU_ShapeBase_I::BeginPlay()
 {
     Super::BeginPlay();
-    U_Orientation = 1;
-    SetBlockPositions();
+    //U_Orientation = 1;
+    //SetBlockPositions();
 }
 
 void AU_ShapeBase_I::SetBlockPositions()
@@ -51,7 +51,6 @@ void AU_ShapeBase_I::SetBlockPositions()
             U_BlockShapes[2]->SetActorLocation(U_BlockPositions[5] + GetActorLocation());
             U_BlockShapes[3]->SetActorLocation(U_BlockPositions[6] + GetActorLocation());
         break;
-        //Index goes only till 6 because the BlockPositions has only 7 elements
         //Takes actor location into account due to it needing to know where the current shape (tetromino) is located
     }
 }
