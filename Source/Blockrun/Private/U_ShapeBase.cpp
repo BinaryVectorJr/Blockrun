@@ -29,7 +29,17 @@ AU_ShapeBase::AU_ShapeBase()
 void AU_ShapeBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	//Spawning in the blocks based on the shape (position is determined within the specific shape's CPP code using SetBlockPositions())
+	// i<4 because the whole concept of a tetromino is 4 blocks
+	//AU_BlockBase = TSubclassOf<> data type
+	for(int i=0; i<4; i++)
+	{
+		U_BlockShapes.Add(GetWorld()->SpawnActor<AU_BlockBase>(BP_BlockBase, GetActorLocation(), GetActorRotation()));
+	}
+
+	U_Orientation = 0;
+	SetBlockPositions();
 }
 
 // Called every frame
@@ -39,3 +49,7 @@ void AU_ShapeBase::Tick(float DeltaTime)
 
 }
 
+void AU_ShapeBase::SetBlockPositions()
+{
+	//Leave this blank as it will be set in the specific shape child classes
+}
