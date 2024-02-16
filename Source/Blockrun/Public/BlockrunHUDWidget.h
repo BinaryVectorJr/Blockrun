@@ -10,6 +10,7 @@ class UCanvasPanel;
 class UOverlay;
 class UImage;
 class UVerticalBox;
+class UHorizontalBox;
 class UTextBlock;
 
 /**
@@ -44,10 +45,10 @@ class BLOCKRUN_API UBlockrunHUDWidget : public UUserWidget
 	UVerticalBox* U_VerticalBoxContainer;
 
 	UPROPERTY(meta=(BindWidget))
-	UVerticalBox* U_TopVerticalBox;
+	UHorizontalBox* U_TopHorizontalBox;
 	
 	UPROPERTY(meta=(BindWidget))
-	UVerticalBox* U_BottomVerticalBox;
+	UHorizontalBox* U_BottomHorizontalBox;
 
 	UPROPERTY(meta=(BindWidget))
 	UTextBlock* U_TimerText;
